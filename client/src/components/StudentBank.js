@@ -109,7 +109,6 @@ function CheckingAccount({ account, unit }) {
     let result;
     transList?.forEach((data) => {
       if (data.id == accountId) {
-        console.log(data.studentId);
         result = data.studentId;
       }
     });
@@ -221,7 +220,6 @@ function CheckingAccount({ account, unit }) {
             setDepositUser('');
             setMemo('');
             setTransferAmount('');
-            console.log('success', res.data.success);
           } else {
             console.log(res.data.message);
           }
@@ -403,7 +401,6 @@ function SavingAccount({ account, unit, withdrawId, withdrawBalance }) {
             window.location.reload();
           }, 1400);
           setSavingAmount('');
-          console.log('success', res.data.success);
         } else {
           console.log(res.data.message);
         }
@@ -485,7 +482,6 @@ export function OwnAccount() {
         },
       });
       if (res.data.success) {
-        console.log(res.data.result);
         setUnit(res.data.result);
       }
     } catch (error) {
@@ -509,7 +505,6 @@ export function OwnAccount() {
           },
         });
         if (res.data.success) {
-          console.log(res.data.result);
           const result = Array.isArray(res.data.result)
             ? res.data.result
             : [res.data.result];

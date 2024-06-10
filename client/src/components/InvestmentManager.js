@@ -45,7 +45,7 @@ export function AddInvestment() {
         'ngrok-skip-browser-warning': '69420',
       },
     });
-    console.log(res.data.result);
+
     setInvestmentList(res.data.result);
   };
 
@@ -108,7 +108,7 @@ export function AddInvestment() {
         'ngrok-skip-browser-warning': '69420',
       },
     });
-    console.log(res.data.result);
+
     setStatusList(res.data.result);
   };
 
@@ -265,9 +265,7 @@ export function AddInvestment() {
     return `${newDate.getMonth() + 1}월 ${newDate.getDate()}일`;
   };
 
-  useEffect(() => {
-    console.log(investValueList);
-  }, [investValueList]);
+  useEffect(() => {}, [investValueList]);
 
   useEffect(() => {
     getList();

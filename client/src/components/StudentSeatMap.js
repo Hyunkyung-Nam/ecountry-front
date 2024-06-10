@@ -34,7 +34,6 @@ export default function StudentSeatMap({
             <div className="row-container">
               {Array.from({ length: column?.colNum })?.map((_, columnIndex) => (
                 <div key={columnIndex}>
-                  {console.log(getId(column.rowNum, columnIndex + 1) || '')}
                   <select
                     className="cell-input"
                     value={getId(column.rowNum, columnIndex + 1) || ''}

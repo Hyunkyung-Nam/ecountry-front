@@ -38,12 +38,6 @@ export function BoardPeopleWrite() {
           document.location.href = `/${id}/boardPeople`;
         }
       } else {
-        console.log({
-          title,
-          content,
-          isSecret,
-          countryId: id,
-        });
         const res = await axios({
           method: 'POST',
           url: `${process.env.REACT_APP_HOST}/api/post/petition`,
@@ -59,7 +53,6 @@ export function BoardPeopleWrite() {
             countryId: id,
           },
         });
-        console.log(res.data);
         if (res.data.success) {
           toast.success('글이 등록되었습니다.', {
             autoClose: 1200,
@@ -103,9 +96,7 @@ export function BoardPeopleWrite() {
       getPetiton();
     }
   }, [petitionId]);
-  useEffect(() => {
-    console.log(isSecret);
-  }, [isSecret]);
+  useEffect(() => {}, [isSecret]);
 
   const contents = useRef();
 

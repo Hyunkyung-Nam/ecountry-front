@@ -36,7 +36,6 @@ export function SetNews({ position }) {
       },
     });
     if (res.data.success) {
-      console.log(res.data.result);
       if (res.data.result.skills?.includes(2)) {
         setIsAuth(true);
       }
@@ -61,9 +60,7 @@ export function SetNews({ position }) {
       }
     }
   }, [userInfo]);
-  useEffect(() => {
-    console.log(isWrite);
-  }, [isWrite]);
+  useEffect(() => {}, [isWrite]);
 
   useEffect(() => {
     if (authFunc()) {

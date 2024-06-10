@@ -8,9 +8,7 @@ export default function Test() {
   const [userAuth, setUserAuth] = useConfirm();
   const userInfo = useSelector((state) => state.auth);
 
-  useEffect(() => {
-    console.log(userInfo);
-  }, [userInfo]);
+  useEffect(() => {}, [userInfo]);
 
   useEffect(() => {}, [userAuth]);
 

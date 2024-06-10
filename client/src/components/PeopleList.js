@@ -30,8 +30,6 @@ export function SetPeopleList() {
   const editRateRef = useRef();
   const editResetPwRef = useRef();
 
-  console.log(studentList);
-
   const findJob = (jobId) => {
     let jobName = '무직';
     jobList?.forEach((data) => {
@@ -50,7 +48,7 @@ export function SetPeopleList() {
         'ngrok-skip-browser-warning': '69420',
       },
     });
-    console.log(res.data.result);
+
     setStudentList(res.data.result);
     const res2 = await axios({
       method: 'GET',
@@ -60,7 +58,6 @@ export function SetPeopleList() {
         'ngrok-skip-browser-warning': '69420',
       },
     });
-    console.log(res2.data.result);
     setJobList(res2.data.result);
   };
   //업데이트 -DB
@@ -85,7 +82,6 @@ export function SetPeopleList() {
     });
     if (res.data.success) {
       toast.success('국민 수정이 완료되었습니다', { autoClose: 1300 });
-      console.log(findJob(job));
       if (prevInfo.jobId != job) {
         const res2 = await axios({
           method: 'POST',
@@ -139,7 +135,6 @@ export function SetPeopleList() {
     });
     if (res.data.success) {
       toast.success('국민 추가가 완료되었습니다.', { autoClose: 1300 });
-      console.log(res.data.success);
     }
     getInfo();
   };
@@ -260,9 +255,7 @@ export function SetPeopleList() {
     );
   };
 
-  useEffect(() => {
-    console.log(job);
-  }, [job]);
+  useEffect(() => {}, [job]);
 
   useEffect(() => {
     getInfo();

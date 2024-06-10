@@ -35,7 +35,6 @@ export function StudentSeat() {
       },
     });
 
-    console.log('Columns:', res.data.result);
     setColumns(res.data.result);
   };
 
@@ -48,8 +47,6 @@ export function StudentSeat() {
         'ngrok-skip-browser-warning': '69420',
       },
     });
-    console.log(res);
-    console.log(res.data.result);
     setSeatList(res.data.result);
   };
 
@@ -166,7 +163,6 @@ export function StudentSMap({ columns, seatlist, studentlist, isuser }) {
             <div className="row-container">
               {Array.from({ length: column.colNum }).map((_, columnIndex) => (
                 <div className="cell-input" key={columnIndex}>
-                  {console.log(getId(column.rowNum, columnIndex + 1) || '')}
                   <div className="cell-value">
                     {getId(column.rowNum, columnIndex + 1) || ''}
                   </div>

@@ -62,7 +62,6 @@ export default function Intro() {
         },
         data: { rollNumber: 7, name: '테스트 국민', pw: '1234' },
       });
-      console.log(res.data.success);
       if (res.data.success) {
         successFunc(res.data.result, '/1/main');
       } else {

@@ -23,13 +23,11 @@ export function BoardPeopleRead() {
         'ngrok-skip-browser-warning': '69420',
       },
     });
-    console.log(res.data.result);
     if (res.data.success) {
       setPetitionInfo(res.data.result);
       setIsShow(!res.data.result.isSecret);
       if (userInfo?.isStudent) {
         if (userInfo?.id == res.data.result.writerId) {
-          console.log('학생');
           setIsShow(true);
         }
       } else {

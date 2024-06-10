@@ -105,7 +105,6 @@ export function CommonMainHeader() {
       });
       if (res.data.success) {
         if (res.data.result) {
-          console.log(res.data.result.count);
           setAlarmCount(res.data.result.count);
         }
       } else {
@@ -419,7 +418,6 @@ export function SkillHeader() {
         )
     : [];
   const storedSkillId = localStorage.getItem('skillId');
-  // console.log(storedSkillId);
 
   const handleSkillClick = (key, link, state) => {
     setSelectedSkill(key);
@@ -427,7 +425,6 @@ export function SkillHeader() {
     localStorage.setItem('skillId', key);
     navigate(link);
   };
-  console.log(selectedSkillState);
   return (
     <header>
       <img

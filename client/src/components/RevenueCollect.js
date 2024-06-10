@@ -35,7 +35,6 @@ export default function RevenueCollect() {
         'ngrok-skip-browser-warning': '69420',
       },
     });
-    console.log(res.data.result);
     setStudentList(res.data.result);
   };
 

@@ -47,7 +47,6 @@ export default function Loading({ countryid }) {
 
   const registCountry = async () => {
     try {
-      console.log(setInfo);
       // 국가 생성
       const res = await axios({
         method: 'POST',
@@ -68,8 +67,7 @@ export default function Loading({ countryid }) {
           schoolCode: setInfo.setting1.schoolCode,
         },
       });
-      console.log(`국가 생성 : ${res.data.success}`);
-      console.log(`국가 생성 결과 : ${res.data.result}`);
+
       if (!res.data.success) {
         errorFunc(0);
       }
@@ -96,7 +94,6 @@ export default function Loading({ countryid }) {
           data: data2,
         });
 
-        console.log(`학생 등록 : ${res2.data.success}`);
         if (!res2.data.success) {
           errorFunc(1);
         }
@@ -119,7 +116,7 @@ export default function Loading({ countryid }) {
         },
         data: data3,
       });
-      console.log(`자리 배치 : ${res3.data.success}`);
+
       if (!res3.data.success) {
         errorFunc(2);
       }
@@ -149,7 +146,7 @@ export default function Loading({ countryid }) {
         },
         data: data4,
       });
-      console.log(`직업 리스트 : ${res4.data.success}`);
+
       if (!res4.data.success) {
         errorFunc(3);
       }
@@ -171,7 +168,7 @@ export default function Loading({ countryid }) {
         },
         data: data5,
       });
-      console.log(`규칙 리스트 : ${res5.data.success}`);
+
       if (!res5.data.success) {
         errorFunc(4);
       }
@@ -200,7 +197,7 @@ export default function Loading({ countryid }) {
           countryId: res.data.result.id,
         });
       });
-      console.log(data6);
+
       const res6 = await axios({
         method: 'POST',
         url: `${process.env.REACT_APP_HOST}/api/tax`,
@@ -210,7 +207,7 @@ export default function Loading({ countryid }) {
         },
         data: data6,
       });
-      console.log(`세법 : ${res6.data.success}`);
+
       if (!res6.data.success) {
         errorFunc(5);
       } else {

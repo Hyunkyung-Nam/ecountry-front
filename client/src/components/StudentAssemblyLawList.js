@@ -18,7 +18,6 @@ export function StudentAssemblyLawList() {
         'ngrok-skip-browser-warning': '69420',
       },
     });
-    console.log(res.data.result);
     setLaws(res.data.result);
   };
 

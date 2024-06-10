@@ -305,7 +305,6 @@ function AddSaving() {
         });
       } catch (error) {
         toast.error('적금 가입에 실패했습니다.');
-        console.log(error);
       }
     }
   };
@@ -387,8 +386,6 @@ function CancelSaving() {
       });
 
       if (res.data.success) {
-        console.log('success', res.data.success);
-        console.log(res.data.result);
         setOwnSavingList(res.data.result);
       } else {
         console.log(res.data.message);
@@ -449,8 +446,6 @@ function CancelSaving() {
                 content: `적금을 해지하였습니다.`,
               },
             });
-            console.log('success', res.data.success);
-            console.log('balance', balance);
           } else {
             console.log(res.data.message);
           }
