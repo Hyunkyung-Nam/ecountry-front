@@ -203,6 +203,19 @@ export default function Revune() {
     setUnit(res2.data.result.unit);
   };
 
+  const getTaxLaw = async () => {
+    const res = await axios({
+      method: 'GET',
+      url: `${process.env.REACT_APP_HOST}/api/tax/${id}`,
+      headers: {
+        'Content-Type': `application/json`,
+        'ngrok-skip-browser-warning': '69420',
+      },
+    });
+    console.log(res.data.result);
+    setTaxLaw(res.data.result);
+  };
+
   useEffect(() => {
     // 학생 검색 기능
     // selectedName과 withdrawId가 일치하는 데이터만 showData에 담기
@@ -242,6 +255,7 @@ export default function Revune() {
     getTreasury();
     getStudent();
     getTax();
+    getTaxLaw();
   }, []);
 
   useEffect(() => {

@@ -76,7 +76,7 @@ export default function SalaryTeller() {
         setUnit(res.data.result);
       }
     } catch (error) {
-      '화폐단위 불러오는데 실패', error;
+      console.log('화폐단위 불러오는데 실패', error);
     }
   };
   useEffect(() => {
@@ -101,7 +101,7 @@ export default function SalaryTeller() {
     if (res.data.success) {
       setTransferSalary(res.data.result.value);
     } else {
-      console.log(res.data.message);
+      //console.log(res.data.message);
     }
   };
 
